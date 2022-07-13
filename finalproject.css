@@ -301,9 +301,6 @@
  
  
  
- /* Section 1
-  * --------------------------------------- */
- 
  #section1 h1 {
    color: #444;
  }
@@ -314,10 +311,6 @@
  }
  
 
- 
- 
- /* Section 2
-  * --------------------------------------- */
  
  #section2 h1,
  #section2 p {
@@ -338,9 +331,7 @@
  }
  
  
-#section3{
-    background-color: red;
-}
+
  
  #section3 p {
    color: #757575;
@@ -353,13 +344,7 @@
  
  
  
- 
- /* Overwriting fullPage.js tooltip color
- * --------------------------------------- */
- 
- #pp-nav.custom .pp-tooltip {
-   color: #AAA;
- }
+
  
 
  
