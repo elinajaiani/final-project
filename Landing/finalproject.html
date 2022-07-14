@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Final Project Elina Jaiani</title>
+      <meta name="author" content="EJ" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="finalproject.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="finalproject.js"> </script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+         
+         
+           $('#pagepiling').pagepiling({
+             direction: 'horizontal',
+             menu: '#menu',
+             scrollingSpeed: 2000,
+             anchors: ['page1', 'page2', 'page3', 'page4'],
+             sectionsColor: ['black', '#1C252C', '#F27B1D', '#39C'],
+             navigation: {
+               'position': 'right',
+               'tooltips': ['Home', 'Projects', 'Contact']
+             },
+             afterRender: function() {
+               $('#pp-nav').addClass('custom');
+               console.log("After Render ");
+         
+             },
+             afterLoad: function(anchorLink, index) {
+         
+               console.log("After Load " + index);
+               if (index == 1) {
+         
+                 console.log("index " + index);
+               } else if (index == 2) {
+         
+               }
+         
+               if (index > 1) {
+                 $('#pp-nav').removeClass('custom');
+               } else {
+                 $('#pp-nav').addClass('custom');
+               }
+             },
+             onLeave: function(index, nextIndex, direction) {
+               console.log("After Load " + index);
+         
+               if (index == 1) {
+         
+         
+         
+                 $("#block").animate({
+                   width: "58%"
+                 }, 1000, function() {
+                   console.log("animation finished");
+                   $.fn.pagepiling.setScrollingSpeed(500);
+         
+                 });
+         
+               } else if (index == 2 && nextIndex == 1) {
+         
+                 $("#block").animate({
+                   width: "0%"
+                 }, 3000, function() {
+                   console.log("animation finished");
+                   $.fn.pagepiling.setScrollingSpeed(2000);
+         
+                 });
+         
+               }
+         
+             }
+         
+           });
+         });
+      </script>
+      <style>
+         #pp-nav.custom .pp-tooltip {
+         color: #AAA;
+         }
+      </style>
+   </head>
+   <body>
+      <ul id="menu">
+         <li data-menuanchor="page1" class="active"><a href="#page1">HOME</a></li>
+         <li data-menuanchor="page2"><a href="#page2">OUR PROJECTS</a></li>
+         <li data-menuanchor="page3"><a href="#page3">CONTACT US</a></li>
+      </ul>
+      <div id="pagepiling">
+         <div class="section" id="section1">
+            <div class="intro">
+               <div>
+                  <div style="background:#e96e27;border-left: thick solid #e96e27; height:150px; width:8px; margin-left:42%;" id="block">
+                  </div>
+                  <h1 style="color: white;">ELINA J.</h1>
+                  <p style="color: white;">CREATIVE AGENCY</p>
+               </div>
+            </div>
+         </div>
+         <div class="section">
+            <div class="intro">
+               <a href="file:///Users/elinajaiani/Documents/GitHub/final-project/Landing/projects%20and%20works/projects.html">
+                  <h1>See our work </h1>
+               </a>
+               <p> We provides strategy, design, branding, marketing, advertising, development and technology services </p>
+            </div>
+         </div>
+         <div class="section" id="section3">
+            <div class="intro">
+               <a href="file:///Users/elinajaiani/Documents/GitHub/final-project/Landing/Contact/contact.html" target="_blank">
+                  <h1>Contact us</h1>
+               </a>
+               <p>Our clients seek us for creative, actionable, big ideas, and to partner with a digital agency comprised of people who they like and who are easy to work with.</p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
